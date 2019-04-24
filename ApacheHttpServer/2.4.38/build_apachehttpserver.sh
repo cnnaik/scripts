@@ -3,13 +3,13 @@
 # LICENSE: Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
 #
 # Instructions:
-# Download build script: wget https://raw.githubusercontent.com/linux-on-ibm-z/scripts/master/2.4.38/ApacheHttpServer/build_apachehttpserver.sh
+# Download build script: wget https://raw.githubusercontent.com/linux-on-ibm-z/scripts/master/2.4.39/ApacheHttpServer/build_apachehttpserver.sh
 # Execute build script: bash build_apachehttpserver.sh    (provide -h for help)
 
 set -e -o pipefail
 
 PACKAGE_NAME="apachehttpserver"
-PACKAGE_VERSION="2.4.38"
+PACKAGE_VERSION="2.4.39"
 APR_VERSION="1.6.5"
 APR_UTIL_VERSION="1.6.1"
 CURDIR="$(pwd)"
@@ -159,7 +159,7 @@ case "$DISTRO" in
 	configureAndInstall |& tee -a "$LOG_FILE"
 	;;
 
-"rhel-6.x" | "rhel-7.3" | "rhel-7.4" | "rhel-7.5")
+"rhel-6.x" | "rhel-7.4" | "rhel-7.5" | "rhel-7.6")
 	printf -- "Installing %s %s for %s \n" "$PACKAGE_NAME" "$PACKAGE_VERSION" "$DISTRO" |& tee -a "$LOG_FILE"
 	printf -- 'Installing the dependencies for HTTP server from repository \n' |& tee -a "$LOG_FILE"
 	sudo yum install -y git openssl openssl-devel python gcc libtool autoconf make pcre pcre-devel libxml2 libxml2-devel expat-devel which wget tar |& tee -a "$LOG_FILE"
