@@ -152,7 +152,7 @@ checkPrequisites #Check Prequisites
 
 DISTRO="$ID-$VERSION_ID"
 case "$DISTRO" in
-"ubuntu-16.04" | "ubuntu-18.04")
+"ubuntu-16.04" | "ubuntu-18.04" | | "ubuntu-19.04")
 	printf -- "Installing %s %s for %s \n" "$PACKAGE_NAME" "$PACKAGE_VERSION" "$DISTRO" |& tee -a "$LOG_FILE"
 	sudo apt-get update >/dev/null
 	sudo apt-get install -y git python openssl gcc autoconf make libtool-bin libpcre3-dev libxml2 libexpat1 libexpat1-dev wget tar |& tee -a "$LOG_FILE"
