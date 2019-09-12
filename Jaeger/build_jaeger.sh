@@ -14,8 +14,7 @@ CURDIR="$(pwd)"
 
 FORCE="false"
 LOG_FILE="$CURDIR/logs/${PACKAGE_NAME}-${PACKAGE_VERSION}-$(date +"%F-%T").log"
-CONF_URL="https://raw.githubusercontent.com/linux-on-ibm-z/scripts/master/PhantomJS/patch"
-
+CONF_URL="https://raw.githubusercontent.com/linux-on-ibm-z/scripts/master/Jaeger/patch"
 trap cleanup 0 1 2 ERR
 
 #Check if directory exists
